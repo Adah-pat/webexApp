@@ -19,8 +19,7 @@ const accessToken = process.env.WEBEX_ACCESS_TOKEN;
     });
     const response = await checkStatus(fetchResponse);
     const finalResponse = await response.json();
-    console.log("final response: " +  JSON.stringify(finalResponse));
-    console.log("Room with room id: " + finalResponse.id + "was successfully created");
+    console.log("Room with room id: " + finalResponse.id + " was successfully created");
     return finalResponse;
   }
   catch(error){

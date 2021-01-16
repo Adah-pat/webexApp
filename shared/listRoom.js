@@ -16,7 +16,7 @@ const fetchResponse =   await fetch(`${process.env.WEBEX_URL}/rooms`,
     });
     const response = await checkStatus(fetchResponse);
     const finalResponse = await response.json();
-    console.log("The room List: " +  JSON.stringify(finalResponse));
+    console.log("The room List: " +  JSON.stringify(finalResponse) + "\n");
 
     return finalResponse;
   }

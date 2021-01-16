@@ -3,7 +3,7 @@ dotenv.config();
 const fetch = require('node-fetch');
 const webex = require('webex/env');
 const {checkStatus} = require('./checkStatus');
-const sendCards = async function() {
+exports.sendMessage = async function() {
 const accessToken = process.env.WEBEX_ACCESS_TOKEN;
     try{
 const fetchResponse =   await fetch(`${process.env.WEBEX_URL}/messages`,
@@ -20,7 +20,7 @@ const fetchResponse =   await fetch(`${process.env.WEBEX_URL}/messages`,
     });
     const response = await checkStatus(fetchResponse);
     const finalResponse = await response.json();
-    console.log("Messages : " +  JSON.stringify(finalResponse));
+    console.log("Messages : " +  JSON.stringify(finalResponse) + "\n");
     return finalResponse;
   }
   catch(error){
@@ -28,5 +28,3 @@ const fetchResponse =   await fetch(`${process.env.WEBEX_URL}/messages`,
   }  
 
 }
-
-sendCards();
