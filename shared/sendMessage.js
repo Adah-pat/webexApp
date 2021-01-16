@@ -1,0 +1,32 @@
+const dotenv = require('dotenv');
+dotenv.config();
+const fetch = require('node-fetch');
+const webex = require('webex/env');
+const {checkStatus} = require('./checkStatus');
+const sendCards = async function() {
+const accessToken = process.env.WEBEX_ACCESS_TOKEN;
+    try{
+const fetchResponse =   await fetch(`${process.env.WEBEX_URL}/messages`,
+    {
+        method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+                Authorization: `Bearer ${accessToken}`
+            },
+            body: JSON.stringify({
+            roomId: "Y2lzY29zcGFyazovL3VybjpURUFNOmV1LWNlbnRyYWwtMV9rL1JPT00vYTA2MGQxNzAtNTgzNi0xMWViLWI2ZWQtZmI1NTM5MzMzY2Yz",
+            text:"hello world Patience"
+            })
+    });
+    const response = await checkStatus(fetchResponse);
+    const finalResponse = await response.json();
+    console.log("Messages : " +  JSON.stringify(finalResponse));
+    return finalResponse;
+  }
+  catch(error){
+    console.log(error);
+  }  
+
+}
+
+sendCards();
