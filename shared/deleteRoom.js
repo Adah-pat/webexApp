@@ -5,8 +5,9 @@ const webex = require('webex/env');
 const {checkStatus} = require('./checkStatus');
 const deleteRoom = async function() {
 const accessToken = process.env.WEBEX_ACCESS_TOKEN;
+
 //Replace the roomId value with the room Id of the room you want to delete
-const roomId = "Y2lzY29zcGFyazovL3VybjpURUFNOmV1LWNlbnRyYWwtMV9rL1JPT00vN2JkZjkyYTAtNTgzNi0xMWViLWEwMGUtMDVmMmM3NTlmYmQ0";
+const roomId = process.env.WEBEX_ROOM_ID;
     try{
 const fetchResponse =   await fetch(`${process.env.WEBEX_URL}/rooms/${roomId}`,
     {
