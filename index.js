@@ -5,6 +5,6 @@ const { sendMessageWithCards } = require('./shared/sendMessageWithCards');
 //Creates room
 //createRoom();
 //lists rooms
-listRoom();
-sendMessage();
+//listRoom();
+//sendMessage();
 sendMessageWithCards();

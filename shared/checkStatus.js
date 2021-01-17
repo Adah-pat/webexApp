@@ -1,5 +1,5 @@
 exports.checkStatus = (response) => {
-    if(response.ok || response.status(204)){
+    if(response.ok){
         return response;
     }
     else{

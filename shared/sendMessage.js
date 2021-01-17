@@ -14,8 +14,8 @@ const fetchResponse =   await fetch(`${process.env.WEBEX_URL}/messages`,
                 Authorization: `Bearer ${accessToken}`
             },
             body: JSON.stringify({
-            roomId: "Y2lzY29zcGFyazovL3VybjpURUFNOmV1LWNlbnRyYWwtMV9rL1JPT00vYTA2MGQxNzAtNTgzNi0xMWViLWI2ZWQtZmI1NTM5MzMzY2Yz",
-            text:"hello world Patience"
+            roomId: process.env.WEBEX_ROOM_ID,
+            text:"hello world"
             })
     });
     const response = await checkStatus(fetchResponse);

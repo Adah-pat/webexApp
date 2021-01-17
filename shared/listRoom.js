@@ -10,7 +10,6 @@ const fetchResponse =   await fetch(`${process.env.WEBEX_URL}/rooms`,
     {
         method: 'GET',
             headers: {
-              'Content-Type': 'application/json',
                Authorization: `Bearer ${accessToken}`
             }
     });

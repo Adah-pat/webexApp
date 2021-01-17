@@ -14,7 +14,7 @@ const accessToken = process.env.WEBEX_ACCESS_TOKEN;
                 Authorization: `Bearer ${accessToken}`
             },
             body: JSON.stringify({
-            "title": "Patience new Interview Exercise Room"
+            "title": "Patience Interview Exercise Room"
             })
     });
     const response = await checkStatus(fetchResponse);
